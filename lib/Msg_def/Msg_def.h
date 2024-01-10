@@ -45,4 +45,68 @@
 #define MOTOR_V_LEN       LEN_DOUBLE
 #define MOTOR_I_LEN       LEN_DOUBLE
 
+void put_in_ring_buff(uint8_t* arr[]){
+}
+
+void send_HEART_BEAT(BOOL val){
+    Tx_Rx_packet_BOOL temp_str; 
+    temp_str.payload = val; 
+    put_in_ring_buff(&temp_str);
+}
+void send_KP(FLOAT val){
+    Tx_Rx_packet_FLOAT temp_str; 
+    temp_str.payload = val; 
+    put_in_ring_buff(&temp_str);
+}
+void send_KI(FLOAT val){
+    Tx_Rx_packet_FLOAT temp_str; 
+    temp_str.payload = val; 
+    put_in_ring_buff(&temp_str);
+}
+void send_KD(FLOAT val){
+    Tx_Rx_packet_FLOAT temp_str; 
+    temp_str.payload = val; 
+    put_in_ring_buff(&temp_str);
+}
+void send_U_MAX(FLOAT val){
+    Tx_Rx_packet_FLOAT temp_str; 
+    temp_str.payload = val; 
+    put_in_ring_buff(&temp_str);
+}
+void send_ENCODER_COUNT(INT_32 val){
+    Tx_Rx_packet_INT_32 temp_str; 
+    temp_str.payload = val; 
+    put_in_ring_buff(&temp_str);
+}
+void send_ENCODER_ANGLE(DOUBLE val){
+    Tx_Rx_packet_DOUBLE temp_str; 
+    temp_str.payload = val;
+     put_in_ring_buff(&temp_str);
+}
+void send_ENCODER_SPEED(DOUBLE val){
+    Tx_Rx_packet_DOUBLE temp_str; 
+    temp_str.payload = val;
+     put_in_ring_buff(&temp_str);
+}
+void send_MOTOR_ANGLE(DOUBLE val){
+    Tx_Rx_packet_DOUBLE temp_str; 
+    temp_str.payload = val;
+     put_in_ring_buff(&temp_str);
+}
+void send_MOTOR_SPEED(DOUBLE val){
+    Tx_Rx_packet_DOUBLE temp_str; 
+    temp_str.payload = val; 
+    put_in_ring_buff(&temp_str);
+}
+void send_MOTOR_V(DOUBLE val){
+    Tx_Rx_packet_DOUBLE temp_str; 
+    temp_str.payload = val; 
+    put_in_ring_buff(&temp_str);
+}
+void send_MOTOR_I(DOUBLE val){
+    Tx_Rx_packet_DOUBLE temp_str; 
+    temp_str.payload = val; 
+    put_in_ring_buff(&temp_str);
+}
+
 #endif

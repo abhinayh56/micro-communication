@@ -5,6 +5,20 @@
 
 // https://logicio.com/HTML/datatypesandvariables.htm
 
+// data type aliasing
+typedef bool     BOOL;
+typedef char     CHAR;
+typedef int8_t   INT_8;
+typedef uint8_t  U_INT_8;
+typedef int16_t  INT_16;
+typedef uint16_t U_INT_16;
+typedef int32_t  INT_32;
+typedef uint32_t U_INT_32;
+typedef int64_t  INT_64;
+typedef uint64_t U_INT_64;
+typedef float    FLOAT;
+typedef double   DOUBLE;
+
 // data type names
 #define TYPE_BOOL     0
 #define TYPE_CHAR     1
@@ -150,7 +164,7 @@ struct Tx_Rx_packet_DOUBLE{
     uint8_t start = PKT_START;
     uint8_t msg_id;
     uint8_t msg_seq = 0;
-    double  ayload;
+    double  payload;
     uint8_t chk;
 };
 #pragma pack(pop)
