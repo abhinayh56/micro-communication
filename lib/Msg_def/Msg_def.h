@@ -2,6 +2,8 @@
 #define MSG_DEF
 
 #include "Datastruct.h"
+#include "Arduino.h"
+#include "Ring_buffer.h"
 
 // list of message names / ID
 #define HEART_BEAT    = 0
@@ -45,68 +47,112 @@
 #define MOTOR_V_LEN       LEN_DOUBLE
 #define MOTOR_I_LEN       LEN_DOUBLE
 
-void put_in_ring_buff(uint8_t* arr[]){
-}
-
 void send_HEART_BEAT(BOOL val){
     Tx_Rx_packet_BOOL temp_str; 
-    temp_str.payload = val; 
-    put_in_ring_buff(&temp_str);
+    temp_str.payload = val;
+
+    uint8_t byte_arr[sizeof(struct Tx_Rx_packet_BOOL)];
+    memcpy(byte_arr, &temp_str, sizeof(struct Tx_Rx_packet_BOOL));
+    Serial.write(byte_arr, sizeof(struct Tx_Rx_packet_BOOL));
 }
+
 void send_KP(FLOAT val){
     Tx_Rx_packet_FLOAT temp_str; 
     temp_str.payload = val; 
-    put_in_ring_buff(&temp_str);
+
+    uint8_t byte_arr[sizeof(struct Tx_Rx_packet_FLOAT)];
+    memcpy(byte_arr, &temp_str, sizeof(struct Tx_Rx_packet_FLOAT));
+    Serial.write(byte_arr, sizeof(struct Tx_Rx_packet_FLOAT));
 }
+
 void send_KI(FLOAT val){
     Tx_Rx_packet_FLOAT temp_str; 
-    temp_str.payload = val; 
-    put_in_ring_buff(&temp_str);
+    temp_str.payload = val;
+
+    uint8_t byte_arr[sizeof(struct Tx_Rx_packet_FLOAT)];
+    memcpy(byte_arr, &temp_str, sizeof(struct Tx_Rx_packet_FLOAT));
+    Serial.write(byte_arr, sizeof(struct Tx_Rx_packet_FLOAT));
 }
+
 void send_KD(FLOAT val){
     Tx_Rx_packet_FLOAT temp_str; 
-    temp_str.payload = val; 
-    put_in_ring_buff(&temp_str);
+    temp_str.payload = val;
+
+    uint8_t byte_arr[sizeof(struct Tx_Rx_packet_FLOAT)];
+    memcpy(byte_arr, &temp_str, sizeof(struct Tx_Rx_packet_FLOAT));
+    Serial.write(byte_arr, sizeof(struct Tx_Rx_packet_FLOAT));
 }
+
 void send_U_MAX(FLOAT val){
     Tx_Rx_packet_FLOAT temp_str; 
-    temp_str.payload = val; 
-    put_in_ring_buff(&temp_str);
+    temp_str.payload = val;
+
+    uint8_t byte_arr[sizeof(struct Tx_Rx_packet_FLOAT)];
+    memcpy(byte_arr, &temp_str, sizeof(struct Tx_Rx_packet_FLOAT));
+    Serial.write(byte_arr, sizeof(struct Tx_Rx_packet_FLOAT));
 }
+
 void send_ENCODER_COUNT(INT_32 val){
     Tx_Rx_packet_INT_32 temp_str; 
-    temp_str.payload = val; 
-    put_in_ring_buff(&temp_str);
+    temp_str.payload = val;
+
+    uint8_t byte_arr[sizeof(struct Tx_Rx_packet_INT_32)];
+    memcpy(byte_arr, &temp_str, sizeof(struct Tx_Rx_packet_INT_32));
+    Serial.write(byte_arr, sizeof(struct Tx_Rx_packet_INT_32));
 }
+
 void send_ENCODER_ANGLE(DOUBLE val){
     Tx_Rx_packet_DOUBLE temp_str; 
     temp_str.payload = val;
-     put_in_ring_buff(&temp_str);
+
+    uint8_t byte_arr[sizeof(struct Tx_Rx_packet_DOUBLE)];
+    memcpy(byte_arr, &temp_str, sizeof(struct Tx_Rx_packet_DOUBLE));
+    Serial.write(byte_arr, sizeof(struct Tx_Rx_packet_DOUBLE));
 }
+
 void send_ENCODER_SPEED(DOUBLE val){
     Tx_Rx_packet_DOUBLE temp_str; 
     temp_str.payload = val;
-     put_in_ring_buff(&temp_str);
+
+    uint8_t byte_arr[sizeof(struct Tx_Rx_packet_DOUBLE)];
+    memcpy(byte_arr, &temp_str, sizeof(struct Tx_Rx_packet_DOUBLE));
+    Serial.write(byte_arr, sizeof(struct Tx_Rx_packet_DOUBLE));
 }
+
 void send_MOTOR_ANGLE(DOUBLE val){
     Tx_Rx_packet_DOUBLE temp_str; 
     temp_str.payload = val;
-     put_in_ring_buff(&temp_str);
+
+    uint8_t byte_arr[sizeof(struct Tx_Rx_packet_DOUBLE)];
+    memcpy(byte_arr, &temp_str, sizeof(struct Tx_Rx_packet_DOUBLE));
+    Serial.write(byte_arr, sizeof(struct Tx_Rx_packet_DOUBLE));
 }
+
 void send_MOTOR_SPEED(DOUBLE val){
     Tx_Rx_packet_DOUBLE temp_str; 
     temp_str.payload = val; 
-    put_in_ring_buff(&temp_str);
+
+    uint8_t byte_arr[sizeof(struct Tx_Rx_packet_DOUBLE)];
+    memcpy(byte_arr, &temp_str, sizeof(struct Tx_Rx_packet_DOUBLE));
+    Serial.write(byte_arr, sizeof(struct Tx_Rx_packet_DOUBLE));
 }
+
 void send_MOTOR_V(DOUBLE val){
     Tx_Rx_packet_DOUBLE temp_str; 
     temp_str.payload = val; 
-    put_in_ring_buff(&temp_str);
+
+    uint8_t byte_arr[sizeof(struct Tx_Rx_packet_DOUBLE)];
+    memcpy(byte_arr, &temp_str, sizeof(struct Tx_Rx_packet_DOUBLE));
+    Serial.write(byte_arr, sizeof(struct Tx_Rx_packet_DOUBLE));
 }
+
 void send_MOTOR_I(DOUBLE val){
     Tx_Rx_packet_DOUBLE temp_str; 
     temp_str.payload = val; 
-    put_in_ring_buff(&temp_str);
+
+    uint8_t byte_arr[sizeof(struct Tx_Rx_packet_DOUBLE)];
+    memcpy(byte_arr, &temp_str, sizeof(struct Tx_Rx_packet_DOUBLE));
+    Serial.write(byte_arr, sizeof(struct Tx_Rx_packet_DOUBLE));
 }
 
 #endif
